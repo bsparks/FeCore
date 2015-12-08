@@ -7,7 +7,6 @@
     }
   },
   "devDependencies": {
-    "gulp": "^3.9.0",
     "jspm": "^0.16.15"
   }
 }
