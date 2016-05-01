@@ -21,6 +21,12 @@ export default class SignalBus {
         this.signals[eventName].addOnce(callback, scope);
     }
 
+    emit(eventName, ...args) {
+        if(this.signals[eventName]) {
+            this.signals[eventName].post(...args);
+        }
+    }
+
     clear(eventName) {
         if(this.signals[eventName]) {
             this.signals[eventName].clear();

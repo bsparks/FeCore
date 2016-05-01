@@ -1344,6 +1344,19 @@ $__System.register('2a', ['27', '28', '2b'], function (_export) {
                         this.signals[eventName].addOnce(callback, scope);
                     }
                 }, {
+                    key: 'emit',
+                    value: function emit(eventName) {
+                        if (this.signals[eventName]) {
+                            var _signals$eventName;
+
+                            for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+                                args[_key - 1] = arguments[_key];
+                            }
+
+                            (_signals$eventName = this.signals[eventName]).post.apply(_signals$eventName, args);
+                        }
+                    }
+                }, {
                     key: 'clear',
                     value: function clear(eventName) {
                         if (this.signals[eventName]) {
